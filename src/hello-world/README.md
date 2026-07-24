@@ -1,7 +1,8 @@
 # hello-world
 
-Minimal proof-of-concept Workbench application. It serves a single static
-HTML page reading "Hello world!" via nginx — nothing else.
+Proof-of-concept Workbench application. It serves the VIA variant-search entry
+page as a static site via nginx: entering candidate variants and clicking
+Search navigates to the (also static/mocked) results page.
 
 ## Configuration
 
@@ -9,7 +10,7 @@ HTML page reading "Hello world!" via nginx — nothing else.
 - **Port**: 8080
 - **User**: root
 - **Home Directory**: /root
-- **Content**: `html/index.html`, served by nginx using `nginx.conf`
+- **Content**: `html/via-search-entry-v1.html` (default page, served by nginx using `nginx.conf`), which links to `html/via-search-results-v1.4.html` on Search
 
 ## Access
 
@@ -22,8 +23,9 @@ For local testing:
 
 ## Customization
 
-- `html/index.html` - The static page that gets served. Edit this to change the content.
-- `nginx.conf` - nginx server config (listens on port 8080, serves `html/`).
+- `html/via-search-entry-v1.html` - The entry page (default document). Edit this to change the search form.
+- `html/via-search-results-v1.4.html` - The mocked results page navigated to on Search.
+- `nginx.conf` - nginx server config (listens on port 8080, serves `html/`, default document is `via-search-entry-v1.html`).
 - `.devcontainer.json` - Devcontainer configuration and features.
 - `docker-compose.yaml` - Docker Compose configuration.
 - `devcontainer-template.json` - Template options and metadata.
