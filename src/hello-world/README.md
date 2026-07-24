@@ -5,7 +5,7 @@ HTML page reading "Hello world!" via nginx — nothing else.
 
 ## Configuration
 
-- **Image**: nginx:alpine
+- **Image**: nginx:1.27 (Debian-based — the `devcontainer` features below require `bash`/`apt-get`, which Alpine images don't have)
 - **Port**: 8080
 - **User**: root
 - **Home Directory**: /root
